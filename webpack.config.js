@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const config = {
   mode: 'none',
   entry: './src/Index.js',
@@ -19,7 +21,12 @@ const config = {
           }
         ]
       }]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ]
 };
 
 module.exports = config;
