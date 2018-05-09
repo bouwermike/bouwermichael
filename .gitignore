@@ -2,5 +2,6 @@ jsconfig.json
 
 /node_modules
 
-
+.gitignore
+.DS_store
 /dist
