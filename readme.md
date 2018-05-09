@@ -1,11 +1,22 @@
-#bouwermichael.com
+# bouwermichael.com
 
 Wherein I document my many successes.
 
 Built in a very hacky manner using template literals and Webpack to create a React-ish feeling. Will be the subject of a future blog post.
 
-####For a production build
-`npx webpack`
+I am well aware there are a million simpler ways of doing this.
 
-####For a development server
-`npm start`
+#### To begin
+```
+npm install
+```
+
+#### For a production build
+```
+npx webpack
+```
+
+#### For a development server
+```
+npm start
+```
