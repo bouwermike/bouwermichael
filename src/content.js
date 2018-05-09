@@ -39,5 +39,9 @@ const Aboutme = [
     }
 ]
 
+const Title = `Product. Strategy. Storytelling.`
 
-export { Work, Projects, Writing, Aboutme }
+const Hero = `I am a product thinker, business strategist, and writer with experience working in fast moving product environments on three continents. I enjoy taking data and turning it into executable narrative, breaking down complex problems into simple stories, and implementing systems and strategies that move an organisation forward.`
+
+
+export { Work, Projects, Writing, Aboutme, Title, Hero }

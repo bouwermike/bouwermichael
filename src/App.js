@@ -1,5 +1,5 @@
 import pic from './assets/ProfilePic.jpg'
-import { Hero, Title } from './content/Hero'
+import { Hero, Title } from './content'
 
 const App = (props) => {
     return `
@@ -14,8 +14,8 @@ const App = (props) => {
             </div>
             <div class="heroCallout">
                 <div class="callout">
-                    <h2>${Title()}</h2>
-                    <p>${Hero()}</p>
+                    <h2>${Title}</h2>
+                    <p>${Hero}</p>
                     <span class="links"><p class="links"><a href="">Medium</a> | <a href="">LinkedIn</a> | <a href="">Email</a> </p></span>
                 </div>
             </div>

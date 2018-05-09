@@ -76,32 +76,100 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_Styles_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 
 
 
-const template = `
-    ${Object(_App_js__WEBPACK_IMPORTED_MODULE_0__["default"])()}
-`
-const render = () => {
-    let frag = document.createRange().createContextualFragment(template)
-    let root = document.getElementById('app')
-    root.appendChild(frag)
-}
+
+
+//Parse work content
+const work = []
+_content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    work.push(x)
+})
+
+//Parse projects content
+const projects = []
+_content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    projects.push(x)
+})
+
+//Parse projects content
+const writing = []
+_content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    writing.push(x)
+})
+
+//Parse projects content
+const aboutme = []
+_content__WEBPACK_IMPORTED_MODULE_3__["Aboutme"].forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    aboutme.push(x)
+})
 
 document.onreadystatechange = () => {
     switch (document.readyState) {
         case 'loading':
-
+            //
             break;
         case 'interactive':
-            render()
+            Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Mount"])(Object(_App_js__WEBPACK_IMPORTED_MODULE_0__["default"])(), 'app')
+            window.addEventListener('popstate', (e) => {
+                e.preventDefault()
+                switch (window.location.hash) {
+                    case '#work':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', work.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'work_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        break;
+                    case '#projects':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', projects.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'projects_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        break;
+                    case '#writing':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', writing.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'writing_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        break;
+                    case '#aboutme':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', aboutme.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'aboutme_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        break;
+                    default:
+                        //
+                        break;
+                }
+            })
             break
         case 'completed':
-
+            //
             break
         default:
+            //
             break;
     }
 }
@@ -114,29 +182,15 @@ document.onreadystatechange = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _content_Hero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _content_Work__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
-
-
-
-const work =  []
-_content_Work__WEBPACK_IMPORTED_MODULE_2__["Work"].forEach(e => {
-    let x = `
-    <h1>${e.title}</h1>
-    <p>${e.body}</p>
-    `
-
-    work.push(x)
-
-})
 
 
 const App = (props) => {
     return `
    <div class="mainContainer">
         <div class="topBar">
-            <h1>MICHAEL BOUWER</h1>
+            <h2>MICHAEL BOUWER</h2>
         </div>
         <hr>
         <div class="hero">
@@ -145,23 +199,23 @@ const App = (props) => {
             </div>
             <div class="heroCallout">
                 <div class="callout">
-                    <h2>${Object(_content_Hero__WEBPACK_IMPORTED_MODULE_1__["Title"])()}</h2>
-                    <p>${Object(_content_Hero__WEBPACK_IMPORTED_MODULE_1__["Hero"])()}</p>
-                    <span class="links"><a href="#more">Find Out More</a> | <a href="#contact">Get In Touch</a></span>
+                    <h2>${_content__WEBPACK_IMPORTED_MODULE_1__["Title"]}</h2>
+                    <p>${_content__WEBPACK_IMPORTED_MODULE_1__["Hero"]}</p>
+                    <span class="links"><p class="links"><a href="">Medium</a> | <a href="">LinkedIn</a> | <a href="">Email</a> </p></span>
                 </div>
             </div>
         </div>
-        <div class="tabs" id="more">
+        <div class="tabs" id="tabs">
             <ul>
-                <li><a href="">Work</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Writing</a></li>
-                <li><a href="">About Me</a></li>
+                <li><a href="#work" id="work_" class="tab">Work</a></li>
+                <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
+                <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
+                <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
-        <div class="mainContent">
-            <div class="work">
-                ${work.join(' ')}
+        <div class="mainContentSection">
+            <div class="content" id="mainContent">
+                
             </div>
         </div>
    </div>
@@ -183,35 +237,12 @@ module.exports = __webpack_require__.p + "53db9e4762e8d0167902cc87710f9a12.jpg";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hero", function() { return Hero; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
-const Hero = (props) => {
-    return `
-    I am a product thinker, business strategist, and writer with experience working in fast moving 
-    product environments on three continents.
-
-    I enjoy taking data and turning it into executable narrative, 
-    breaking down complex problems into simple stories,
-    and implementing systems and strategies that move an organisation forward.  
-`
-}
-
-const Title = (props) => {
-  return `
-  PRODUCT. STRATEGY. STORYTELLING.
-`
-}
-
-
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Work", function() { return Work; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Projects", function() { return Projects; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Writing", function() { return Writing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Aboutme", function() { return Aboutme; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hero", function() { return Hero; });
 const Work = [
     {
         title: 'Wrapp',
@@ -219,19 +250,53 @@ const Work = [
     },
     {
         title: 'Mobenzi',
+        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labo. '
+    }
+]
+
+const Projects = [
+    {
+        title: 'WarpShift',
+        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+    },
+    {
+        title: 'ProductX',
+        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
+    }
+]
+
+const Writing = [
+    {
+        title: 'Medium1',
+        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+    },
+    {
+        title: 'Medium2',
         body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
     }
 ]
 
 
+const Aboutme = [
+    {
+        title: 'About Me',
+        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+    }
+]
+
+const Title = `Product. Strategy. Storytelling.`
+
+const Hero = `I am a product thinker, business strategist, and writer with experience working in fast moving product environments on three continents. I enjoy taking data and turning it into executable narrative, breaking down complex problems into simple stories, and implementing systems and strategies that move an organisation forward.`
+
+
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(6);
+var content = __webpack_require__(5);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -245,28 +310,28 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(8)(content, options);
+var update = __webpack_require__(7)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Pacifico);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100);", ""]);
 
 // module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: #F6F8F7;\n    background-color: #1A1A20;\n}\n\n/* Structure */\n.mainContainer {\n    margin-left: 10%;\n    margin-right: 10%;\n    max-width: 1680px;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    color: #F6F8F7;\n    font-family: 'Pacifico', sans-serif;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    background-color: #1A1A20;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: center; \n    padding: 10%;\n}\n\n.links a {\n    text-decoration: none;\n    color:#F4C718;\n    padding: 5px\n}\n\n .links a:hover {\n    color: #F6F8F7;\n    background-color: #A85060;\n    border-radius: 3px;\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:#F6F8F7;\n    text-decoration: underline\n}\n\n.tabs a:hover {\n    color: #F6F8F7;\n    background-color: #F4C718;\n    border-radius: 3px;\n} \n", ""]);
+exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: #F6F8F7;\n    background-color: #1A1A20;\n}\n\n/* Structure */\n.mainContainer {\n    margin-left: 10%;\n    margin-right: 10%;\n    max-width: 1680px;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    background-color: #1A1A20;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: center; \n    padding: 10%;\n}\n\n\n.links a {\n    text-decoration: none;\n    color:#F4C718;\n    padding: 5px;\n    font-family: 'Roboto Mono', monospace;\n}\n\n .links a:hover {\n    color: #F6F8F7;\n    background-color: #A85060;\n    border-radius: 3px;\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:#F6F8F7;\n    \n}\n\n.tabs a:hover {\n    color: #F4C718;\n} \n\n.tabs a.is-active {\n    color: #F4C718;\n    text-decoration: underline;\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /*
@@ -348,7 +413,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -414,7 +479,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(9);
+var	fixUrls = __webpack_require__(8);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -734,7 +799,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 
@@ -826,6 +891,64 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Mount", function() { return Mount; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Update", function() { return Update; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "smoothScroll", function() { return smoothScroll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMinHeight", function() { return setMinHeight; });
+//Used to initally mount the document fragment onto the document body
+const Mount = (template, element) => {
+    let frag = document.createRange().createContextualFragment(template)
+    let root = document.getElementById(element)
+    root.appendChild(frag)
+}
+
+//Used to update a given target node
+const Update = (targetNodeID, content) => {
+    let node = document.getElementById(targetNodeID)
+    node.innerHTML = ''
+    let frag = document.createRange().createContextualFragment(content)
+    node.appendChild(frag)
+}
+
+//Used to easily toggle classes of grouped elements
+const toggleClass = (elementClassSelector, elementClassToggle, targetElementID) => {
+    let elements = document.getElementsByClassName(elementClassSelector)
+    for (const key in elements) {
+        if (elements.hasOwnProperty(key)) {
+            const element = elements[key];
+            if (element.id == targetElementID) {
+                element.classList.add(elementClassToggle)
+            } else {
+                element.classList.remove(elementClassToggle)
+            }
+        }
+    }
+}
+
+//Used for smooth scrolling
+const smoothScroll = (element) => {
+    element.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+        inline: "nearest"
+    })
+}
+
+//Set consistent height to stop jumping back and forth on scroll
+const setMinHeight = (id, height) => {
+    let el = document.getElementById(id)
+    el.style.minHeight = height
+}
+
 
 
 /***/ })
