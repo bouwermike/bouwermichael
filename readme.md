@@ -20,3 +20,8 @@ npx webpack
 ```
 npm start
 ```
+
+#### For a build and a simple production server
+```
+npm run build-serve
+```
