@@ -138,26 +138,26 @@ document.onreadystatechange = () => {
                     case '#work':
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', work.join(' '))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'work_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#projects':
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', projects.join(' '))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'projects_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#writing':
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', writing.join(' '))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'writing_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#aboutme':
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', aboutme.join(' '))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'aboutme_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     default:
                         //
@@ -325,7 +325,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100);", ""]);
 
 // module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: white;\n    background-color: black;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\n\n.links a {\n    text-decoration: none;\n    color:#F4C718;\n    padding: 5px;\n    font-family: 'Roboto Mono', monospace;\n}\n\n .links a:hover {\n    color: #F6F8F7;\n    background-color: #A85060;\n    border-radius: 3px;\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:#F6F8F7;\n    \n}\n\n.tabs a:hover {\n    color: #F4C718;\n} \n\n.tabs a.is-active {\n    color: #F4C718;\n    text-decoration: underline;\n}\n\n", ""]);
+exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n", ""]);
 
 // exports
 

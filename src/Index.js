@@ -1,7 +1,7 @@
 import App from './App.js'
 import './css/Styles.css'
 import { Mount, Update, toggleClass, smoothScroll, setMinHeight } from './Helpers'
-import { Work, Projects, Writing, Aboutme } from './content'
+import { Work, Projects, Writing, Aboutme } from './Content'
 
 //Parse work content
 const work = []
@@ -23,7 +23,7 @@ Projects.forEach(e => {
     projects.push(x)
 })
 
-//Parse projects content
+//Parse writing content
 const writing = []
 Writing.forEach(e => {
     let x = `
@@ -33,7 +33,7 @@ Writing.forEach(e => {
     writing.push(x)
 })
 
-//Parse projects content
+//Parse aboutme content
 const aboutme = []
 Aboutme.forEach(e => {
     let x = `
@@ -50,6 +50,7 @@ document.onreadystatechange = () => {
             break;
         case 'interactive':
             Mount(App(), 'app')
+            Update('mainContent', work.join(' '))
             window.addEventListener('popstate', (e) => {
                 e.preventDefault()
                 switch (window.location.hash) {

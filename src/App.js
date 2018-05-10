@@ -1,5 +1,5 @@
 import pic from './assets/ProfilePic.jpg'
-import { Hero, Title } from './content'
+import { Hero, Title } from './Content'
 
 const App = (props) => {
     return `
@@ -22,7 +22,7 @@ const App = (props) => {
         </div>
         <div class="tabs" id="tabs">
             <ul>
-                <li><a href="#work" id="work_" class="tab">Work</a></li>
+                <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
                 <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
                 <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
