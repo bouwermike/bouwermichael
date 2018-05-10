@@ -3,15 +3,14 @@
 
 body, html {
     font-family: 'Open Sans', sans-serif;
-    color: #F6F8F7;
-    background-color: #1A1A20;
+    color: black;
+    background-color: #ffff;
 }
 
 /* Structure */
 .mainContainer {
-    margin-left: 10%;
-    margin-right: 10%;
-    max-width: 1680px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 @media screen and (max-width: 600px) {
     .mainContainer {
@@ -38,7 +37,6 @@ hr {
 
 .hero {
     display: flex;
-    background-color: #1A1A20;
     border-radius: 5px;    
 }
 
@@ -56,22 +54,19 @@ hr {
 }
 
 .callout {
-    text-align: center; 
+    text-align: left; 
     padding: 10%;
 }
 
 
 .links a {
     text-decoration: none;
-    color:#F4C718;
+    color:#FF6978;
     padding: 5px;
-    font-family: 'Roboto Mono', monospace;
 }
 
  .links a:hover {
-    color: #F6F8F7;
-    background-color: #A85060;
-    border-radius: 3px;
+    text-decoration: underline
 } 
 
 .tabs {
@@ -95,16 +90,16 @@ hr {
 .tabs li a {
     padding: 10px;
     text-decoration: none;
-    color:#F6F8F7;
+    color:black;
     
 }
 
 .tabs a:hover {
-    color: #F4C718;
+    color: #FF6978;
 } 
 
 .tabs a.is-active {
-    color: #F4C718;
+    color: #FF6978;
     text-decoration: underline;
 }
 

@@ -56,26 +56,26 @@ document.onreadystatechange = () => {
                     case '#work':
                         Update('mainContent', work.join(' '))
                         toggleClass('tab', 'is-active', 'work_')
-                        smoothScroll(document.getElementById('tabs'))
                         setMinHeight('mainContent', "800px")
+                        smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#projects':
                         Update('mainContent', projects.join(' '))
                         toggleClass('tab', 'is-active', 'projects_')
-                        smoothScroll(document.getElementById('tabs'))
                         setMinHeight('mainContent', "800px")
+                        smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#writing':
                         Update('mainContent', writing.join(' '))
                         toggleClass('tab', 'is-active', 'writing_')
-                        smoothScroll(document.getElementById('tabs'))
                         setMinHeight('mainContent', "800px")
+                        smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#aboutme':
                         Update('mainContent', aboutme.join(' '))
                         toggleClass('tab', 'is-active', 'aboutme_')
-                        smoothScroll(document.getElementById('tabs'))
                         setMinHeight('mainContent', "800px")
+                        smoothScroll(document.getElementById('tabs'))
                         break;
                     default:
                         //

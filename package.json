@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "build-for-github": "npx webpack && rm -r docs && mkdir docs && cp -R dist/. docs/",
     "start-dev": "webpack-dev-server --open",
     "start": "http-server ./dist",
     "build-serve": "npx webpack && http-server ./dist"
