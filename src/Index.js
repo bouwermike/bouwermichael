@@ -8,6 +8,7 @@ const work = []
 Work.forEach(e => {
     let x = `
     <h1>${e.title}</h1>
+    <h4>${e.subtitle}</h4>
     <p>${e.body}</p>
     `
     work.push(x)

@@ -12,13 +12,24 @@ body, html {
     max-width: 1200px;
     margin: 0 auto;
 }
-@media screen and (max-width: 600px) {
-    .mainContainer {
-        margin: auto;
+@media screen and (max-width: 680px) {
+    .profileImg {
+       display: none;
     }
-    body {
-        background-color: blueviolet
+    .links {
+        display: none;
     }
+}
+
+@media screen and (min-width: 680px){
+    .mobileLinks {
+        display: none;
+    }
+}
+
+.mobileLinks {
+    list-style: none;
+    padding: 5px;
 }
 
 .topBar {
@@ -43,7 +54,9 @@ hr {
 .heroImage {
     display: flex;
     border-radius: 5px;
+    align-self: center;
 }
+
 .profileImg {
     border-radius: 200px;
     padding: 5%
@@ -110,3 +123,7 @@ a:hover {
     text-decoration: underline;
 }
 
+.mainContentSection {
+    margin-left: 30px;
+    margin-right: 30px;
+}
