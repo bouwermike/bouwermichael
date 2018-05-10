@@ -1,7 +1,7 @@
 import App from './App.js'
 import './css/Styles.css'
 import { Mount, Update, toggleClass, smoothScroll, setMinHeight } from './Helpers'
-import { Work, Projects, Writing, Aboutme } from './Content'
+import { Work, Projects, Writing, Skills, Aboutme } from './Content'
 
 //Parse work content
 const work = []
@@ -33,12 +33,22 @@ Writing.forEach(e => {
     writing.push(x)
 })
 
+//Parse skills content
+const skills = []
+Skills.forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    skills.push(x)
+})
+
 //Parse aboutme content
 const aboutme = []
 Aboutme.forEach(e => {
     let x = `
     <h1>${e.title}</h1>
-    <p>${e.body}</p>
+    <div>${e.body}</div>
     `
     aboutme.push(x)
 })
@@ -69,6 +79,12 @@ document.onreadystatechange = () => {
                     case '#writing':
                         Update('mainContent', writing.join(' '))
                         toggleClass('tab', 'is-active', 'writing_')
+                        setMinHeight('mainContent', "800px")
+                        smoothScroll(document.getElementById('tabs'))
+                        break;
+                    case '#skills':
+                        Update('mainContent', skills.join(' '))
+                        toggleClass('tab', 'is-active', 'skills_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
                         break;

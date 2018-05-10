@@ -58,6 +58,13 @@ hr {
     padding: 10%;
 }
 
+a {
+    text-decoration: none;
+    color:#FF6978;
+}
+a:hover {
+    text-decoration: underline
+} 
 
 .links a {
     text-decoration: none;

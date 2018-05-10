@@ -16,7 +16,7 @@ const App = (props) => {
                 <div class="callout">
                     <h2>${Title}</h2>
                     <p>${Hero}</p>
-                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="">Get In Touch</a> </p></span>
+                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="#aboutme">Get In Touch</a> </p></span>
                 </div>
             </div>
         </div>
@@ -25,6 +25,7 @@ const App = (props) => {
                 <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
                 <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
                 <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
+                <li><a href="#skills" id="skills_" class="tab">Skills</a></li>
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
