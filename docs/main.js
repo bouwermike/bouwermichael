@@ -79,7 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_Styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
-/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 
 
 
@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //Parse work content
 const work = []
-_content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -97,7 +97,7 @@ _content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
 
 //Parse projects content
 const projects = []
-_content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -105,9 +105,9 @@ _content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
     projects.push(x)
 })
 
-//Parse projects content
+//Parse writing content
 const writing = []
-_content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -115,9 +115,9 @@ _content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
     writing.push(x)
 })
 
-//Parse projects content
+//Parse aboutme content
 const aboutme = []
-_content__WEBPACK_IMPORTED_MODULE_3__["Aboutme"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_3__["Aboutme"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -132,6 +132,7 @@ document.onreadystatechange = () => {
             break;
         case 'interactive':
             Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Mount"])(Object(_App_js__WEBPACK_IMPORTED_MODULE_0__["default"])(), 'app')
+            Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', work.join(' '))
             window.addEventListener('popstate', (e) => {
                 e.preventDefault()
                 switch (window.location.hash) {
@@ -182,7 +183,7 @@ document.onreadystatechange = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_ProfilePic_jpg__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
@@ -199,15 +200,15 @@ const App = (props) => {
             </div>
             <div class="heroCallout">
                 <div class="callout">
-                    <h2>${_content__WEBPACK_IMPORTED_MODULE_1__["Title"]}</h2>
-                    <p>${_content__WEBPACK_IMPORTED_MODULE_1__["Hero"]}</p>
-                    <span class="links"><p class="links"><a href="">Medium</a> | <a href="">LinkedIn</a> | <a href="">Email</a> </p></span>
+                    <h2>${_Content__WEBPACK_IMPORTED_MODULE_1__["Title"]}</h2>
+                    <p>${_Content__WEBPACK_IMPORTED_MODULE_1__["Hero"]}</p>
+                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="">Get In Touch</a> </p></span>
                 </div>
             </div>
         </div>
         <div class="tabs" id="tabs">
             <ul>
-                <li><a href="#work" id="work_" class="tab">Work</a></li>
+                <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
                 <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
                 <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
@@ -286,7 +287,11 @@ const Aboutme = [
 
 const Title = `Product. Strategy. Storytelling.`
 
-const Hero = `I am a product thinker, business strategist, and writer with experience working in fast moving product environments on three continents. I enjoy taking data and turning it into executable narrative, breaking down complex problems into simple stories, and implementing systems and strategies that move an organisation forward.`
+const Hero = `
+I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
+I care about two things: finding product-market fit, and then achieving scale.<br><br>
+I've tried to position myself at the interesction of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
+Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately commercial success.`
 
 
 
