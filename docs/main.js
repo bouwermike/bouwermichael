@@ -115,12 +115,22 @@ _Content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
     writing.push(x)
 })
 
+//Parse skills content
+const skills = []
+_Content__WEBPACK_IMPORTED_MODULE_3__["Skills"].forEach(e => {
+    let x = `
+    <h1>${e.title}</h1>
+    <p>${e.body}</p>
+    `
+    skills.push(x)
+})
+
 //Parse aboutme content
 const aboutme = []
 _Content__WEBPACK_IMPORTED_MODULE_3__["Aboutme"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
-    <p>${e.body}</p>
+    <div>${e.body}</div>
     `
     aboutme.push(x)
 })
@@ -151,6 +161,12 @@ document.onreadystatechange = () => {
                     case '#writing':
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', writing.join(' '))
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'writing_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        break;
+                    case '#skills':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', skills.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'skills_')
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
                         break;
@@ -202,7 +218,7 @@ const App = (props) => {
                 <div class="callout">
                     <h2>${_Content__WEBPACK_IMPORTED_MODULE_1__["Title"]}</h2>
                     <p>${_Content__WEBPACK_IMPORTED_MODULE_1__["Hero"]}</p>
-                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="">Get In Touch</a> </p></span>
+                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="#aboutme">Get In Touch</a> </p></span>
                 </div>
             </div>
         </div>
@@ -211,6 +227,7 @@ const App = (props) => {
                 <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
                 <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
                 <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
+                <li><a href="#skills" id="skills_" class="tab">Skills</a></li>
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
@@ -241,6 +258,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Work", function() { return Work; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Projects", function() { return Projects; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Writing", function() { return Writing; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Skills", function() { return Skills; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Aboutme", function() { return Aboutme; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hero", function() { return Hero; });
@@ -277,11 +295,39 @@ const Writing = [
     }
 ]
 
+const Skills = [
+    {
+        title: 'Medium1',
+        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+    },
+    {
+        title: 'Medium2',
+        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
+    }
+]
+
 
 const Aboutme = [
     {
-        title: 'About Me',
-        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+        title: '',
+        body: `
+        <p>
+    Orignally, from Durban, South Africa, I have spent the last few years travelling and working for tech companies, in this order:<br>
+    <ul>
+        <li>Sydney, Australia</li>
+        <li>Back to Durban</li>
+        <li>Cape Town, South Africa</li>
+        <li>Stockholm, Sweden</li>
+        <li>Next?</li>
+    </ul>
+    <br>On my off days, you'll find me surfing, writing, building hacky apps in NodeJS, and hanging out with my daughter.
+    <br><br>I'm currently based in Stockholm, Sweden, heading up the merchant facing product of  <a href="https://www.wrapp.com/">Wrapp</a>.</p>
+<br>
+<h4>Get in touch</h4>
+<p>(+46) 0728419904 </p>
+<p><a href="mailto:bouwermichael@gmail.com">bouwermichael@gmail.com</a></p>
+<p><a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a></p>
+`
     }
 ]
 
@@ -330,7 +376,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100);", ""]);
 
 // module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n", ""]);
+exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 600px) {\n    .mainContainer {\n        margin: auto;\n    }\n    body {\n        background-color: blueviolet\n    }\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n}\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#FF6978;\n}\na:hover {\n    text-decoration: underline\n} \n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n", ""]);
 
 // exports
 
