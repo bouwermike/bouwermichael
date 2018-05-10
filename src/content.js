@@ -41,7 +41,11 @@ const Aboutme = [
 
 const Title = `Product. Strategy. Storytelling.`
 
-const Hero = `I am a product thinker, business strategist, and writer with experience working in fast moving product environments on three continents. I enjoy taking data and turning it into executable narrative, breaking down complex problems into simple stories, and implementing systems and strategies that move an organisation forward.`
+const Hero = `
+I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
+I care about two things: finding product-market fit, and then achieving scale.<br><br>
+I've tried to position myself at the interesction of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
+Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately commercial success.`
 
 
 export { Work, Projects, Writing, Aboutme, Title, Hero }

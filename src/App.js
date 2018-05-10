@@ -16,7 +16,7 @@ const App = (props) => {
                 <div class="callout">
                     <h2>${Title}</h2>
                     <p>${Hero}</p>
-                    <span class="links"><p class="links"><a href="">Medium</a> | <a href="">LinkedIn</a> | <a href="">Email</a> </p></span>
+                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="">Get In Touch</a> </p></span>
                 </div>
             </div>
         </div>
