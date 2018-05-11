@@ -2,7 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   mode: 'none',
-  entry: './src/Index.js',
+  entry: {
+    main: './src/Index.js'
+  },
   devServer: {
     contentBase: './dist'
   },

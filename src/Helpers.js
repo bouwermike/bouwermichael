@@ -43,4 +43,24 @@ const setMinHeight = (id, height) => {
     el.style.minHeight = height
 }
 
-export { Mount, Update, toggleClass, smoothScroll, setMinHeight }
+//Used to dynamically set thee favicon, because reasons
+const setFavicon = (source) => {
+    let link = document.querySelector("link[rel*='icon']")
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon'; 
+    link.href = source;
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+//Used to control the visibility of the mobile picker
+const showPicker = () => {
+    let picker = document.getElementById('mobilePicker')
+    picker.style.width = "250px"
+}
+
+const hidePicker = () => {
+    let picker = document.getElementById('mobilePicker')
+    picker.style.width = "0px"
+}
+
+export { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker }

@@ -6,6 +6,9 @@ const App = (props) => {
    <div class="mainContainer">
         <div class="topBar">
             <h2>MICHAEL BOUWER</h2>
+            <span class="mobileMenu"><a href="#navigate" class="icon">
+            <i class="fa fa-bars"></i>
+          </a></span>
         </div>
         <hr>
         <div class="hero">
@@ -34,9 +37,17 @@ const App = (props) => {
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
+        <div class="mobilePicker" id="mobilePicker">
+            <ul>
+                <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
+                <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
+                <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
+                <li><a href="#skills" id="skills_" class="tab">Skills</a></li>
+                <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
+            </ul>
+        </div>
         <div class="mainContentSection">
-            <div class="content" id="mainContent">
-                
+            <div class="content" id="mainContent">  
             </div>
         </div>
    </div>

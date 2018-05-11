@@ -1,6 +1,7 @@
 import App from './App.js'
 import './css/Styles.css'
-import { Mount, Update, toggleClass, smoothScroll, setMinHeight } from './Helpers'
+import favicon from './assets/favicon-256.png'
+import { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker } from './Helpers'
 import { Work, Projects, Writing, Skills, Aboutme } from './Content'
 
 //Parse work content
@@ -61,39 +62,48 @@ document.onreadystatechange = () => {
             break;
         case 'interactive':
             Mount(App(), 'app')
+            setFavicon(favicon)
             Update('mainContent', work.join(' '))
             window.addEventListener('popstate', (e) => {
                 e.preventDefault()
                 switch (window.location.hash) {
                     case '#work':
+                        hidePicker()
                         Update('mainContent', work.join(' '))
                         toggleClass('tab', 'is-active', 'work_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#projects':
+                        hidePicker()
                         Update('mainContent', projects.join(' '))
                         toggleClass('tab', 'is-active', 'projects_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#writing':
+                        hidePicker()
                         Update('mainContent', writing.join(' '))
                         toggleClass('tab', 'is-active', 'writing_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#skills':
+                        hidePicker()
                         Update('mainContent', skills.join(' '))
                         toggleClass('tab', 'is-active', 'skills_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#aboutme':
+                        hidePicker()
                         Update('mainContent', aboutme.join(' '))
                         toggleClass('tab', 'is-active', 'aboutme_')
                         setMinHeight('mainContent', "800px")
                         smoothScroll(document.getElementById('tabs'))
+                        break;
+                    case '#navigate':
+                        showPicker()
                         break;
                     default:
                         //
