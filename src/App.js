@@ -46,6 +46,9 @@ const App = (props) => {
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
+        <div class="mainTitle">
+        <h1 id="mainTitle">Work</h1>
+        </div>
         <div class="mainContentSection">
             <div class="content" id="mainContent">  
             </div>

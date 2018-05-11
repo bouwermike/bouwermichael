@@ -31,6 +31,9 @@ body, html {
     .mobileMenu {
         display: none;
     }
+    .mainTitle h1 {
+        display: none
+    }
 }
 
 .mobileLinks {
@@ -80,6 +83,18 @@ body, html {
 
 .no-display {
     display: none;
+}
+
+.mainTitle {
+    display:flex;
+    justify-content: center;
+}
+.mainTitle h1{
+    text-decoration: underline;
+    padding: 10px;
+    font-size: 30px;
+    margin: 0 5px 0 0; 
+    color:#FF6978; 
 }
 
 .topBar {

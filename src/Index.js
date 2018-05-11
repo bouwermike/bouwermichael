@@ -1,7 +1,7 @@
 import App from './App.js'
 import './css/Styles.css'
 import favicon from './assets/favicon-256.png'
-import { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker } from './Helpers'
+import { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker, updateTitle } from './Helpers'
 import { Work, Projects, Writing, Skills, Aboutme } from './Content'
 
 //Parse work content
@@ -69,6 +69,7 @@ document.onreadystatechange = () => {
                 switch (window.location.hash) {
                     case '#work':
                         hidePicker()
+                        updateTitle('Work')
                         Update('mainContent', work.join(' '))
                         toggleClass('tab', 'is-active', 'work_')
                         setMinHeight('mainContent', "800px")
@@ -76,6 +77,7 @@ document.onreadystatechange = () => {
                         break;
                     case '#projects':
                         hidePicker()
+                        updateTitle('Projects')
                         Update('mainContent', projects.join(' '))
                         toggleClass('tab', 'is-active', 'projects_')
                         setMinHeight('mainContent', "800px")
@@ -83,6 +85,7 @@ document.onreadystatechange = () => {
                         break;
                     case '#writing':
                         hidePicker()
+                        updateTitle('Writing')
                         Update('mainContent', writing.join(' '))
                         toggleClass('tab', 'is-active', 'writing_')
                         setMinHeight('mainContent', "800px")
@@ -90,6 +93,7 @@ document.onreadystatechange = () => {
                         break;
                     case '#skills':
                         hidePicker()
+                        updateTitle('Skills')
                         Update('mainContent', skills.join(' '))
                         toggleClass('tab', 'is-active', 'skills_')
                         setMinHeight('mainContent', "800px")
@@ -97,6 +101,7 @@ document.onreadystatechange = () => {
                         break;
                     case '#aboutme':
                         hidePicker()
+                        updateTitle('About Me')
                         Update('mainContent', aboutme.join(' '))
                         toggleClass('tab', 'is-active', 'aboutme_')
                         setMinHeight('mainContent', "800px")

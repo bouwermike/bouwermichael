@@ -63,4 +63,10 @@ const hidePicker = () => {
     picker.style.width = "0px"
 }
 
-export { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker }
+//Update title on mobile
+const updateTitle = (t) => {
+    let title = document.getElementById('mainTitle')
+    title.textContent = t
+}
+
+export { Mount, Update, toggleClass, smoothScroll, setMinHeight, setFavicon, showPicker, hidePicker, updateTitle }
