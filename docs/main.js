@@ -78,8 +78,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _css_Styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_Styles_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
-/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _assets_favicon_256_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _assets_favicon_256_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_favicon_256_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+
 
 
 
@@ -87,7 +90,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //Parse work content
 const work = []
-_Content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_4__["Work"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <h4>${e.subtitle}</h4>
@@ -98,7 +101,7 @@ _Content__WEBPACK_IMPORTED_MODULE_3__["Work"].forEach(e => {
 
 //Parse projects content
 const projects = []
-_Content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_4__["Projects"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -108,7 +111,7 @@ _Content__WEBPACK_IMPORTED_MODULE_3__["Projects"].forEach(e => {
 
 //Parse writing content
 const writing = []
-_Content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_4__["Writing"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -118,7 +121,7 @@ _Content__WEBPACK_IMPORTED_MODULE_3__["Writing"].forEach(e => {
 
 //Parse skills content
 const skills = []
-_Content__WEBPACK_IMPORTED_MODULE_3__["Skills"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_4__["Skills"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <p>${e.body}</p>
@@ -128,7 +131,7 @@ _Content__WEBPACK_IMPORTED_MODULE_3__["Skills"].forEach(e => {
 
 //Parse aboutme content
 const aboutme = []
-_Content__WEBPACK_IMPORTED_MODULE_3__["Aboutme"].forEach(e => {
+_Content__WEBPACK_IMPORTED_MODULE_4__["Aboutme"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
     <div>${e.body}</div>
@@ -142,40 +145,54 @@ document.onreadystatechange = () => {
             //
             break;
         case 'interactive':
-            Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Mount"])(Object(_App_js__WEBPACK_IMPORTED_MODULE_0__["default"])(), 'app')
-            Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', work.join(' '))
+            Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Mount"])(Object(_App_js__WEBPACK_IMPORTED_MODULE_0__["default"])(), 'app')
+            Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setFavicon"])(_assets_favicon_256_png__WEBPACK_IMPORTED_MODULE_2___default.a)
+            Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', work.join(' '))
             window.addEventListener('popstate', (e) => {
                 e.preventDefault()
                 switch (window.location.hash) {
                     case '#work':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', work.join(' '))
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'work_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["updateTitle"])('Work')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', work.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["toggleClass"])('tab', 'is-active', 'work_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#projects':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', projects.join(' '))
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'projects_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["updateTitle"])('Projects')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', projects.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["toggleClass"])('tab', 'is-active', 'projects_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#writing':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', writing.join(' '))
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'writing_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["updateTitle"])('Writing')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', writing.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["toggleClass"])('tab', 'is-active', 'writing_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#skills':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', skills.join(' '))
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'skills_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["updateTitle"])('Skills')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', skills.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["toggleClass"])('tab', 'is-active', 'skills_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#aboutme':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["Update"])('mainContent', aboutme.join(' '))
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["toggleClass"])('tab', 'is-active', 'aboutme_')
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["setMinHeight"])('mainContent', "800px")
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_2__["smoothScroll"])(document.getElementById('tabs'))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["updateTitle"])('About Me')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["Update"])('mainContent', aboutme.join(' '))
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["toggleClass"])('tab', 'is-active', 'aboutme_')
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["setMinHeight"])('mainContent', "800px")
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
+                        break;
+                    case '#navigate':
+                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["showPicker"])()
                         break;
                     default:
                         //
@@ -209,6 +226,9 @@ const App = (props) => {
    <div class="mainContainer">
         <div class="topBar">
             <h2>MICHAEL BOUWER</h2>
+            <span class="mobileMenu"><a href="#navigate" class="icon">
+            <i class="fa fa-bars"></i>
+          </a></span>
         </div>
         <hr>
         <div class="hero">
@@ -237,9 +257,20 @@ const App = (props) => {
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
             </ul>
         </div>
+        <div class="mobilePicker" id="mobilePicker">
+            <ul>
+                <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
+                <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
+                <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
+                <li><a href="#skills" id="skills_" class="tab">Skills</a></li>
+                <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
+            </ul>
+        </div>
+        <div class="mainTitle">
+        <h1 id="mainTitle">Work</h1>
+        </div>
         <div class="mainContentSection">
-            <div class="content" id="mainContent">
-                
+            <div class="content" id="mainContent">  
             </div>
         </div>
    </div>
@@ -277,22 +308,22 @@ const Work = [
     {
         title: 'Mobenzi',
         subtitle: 'January 2017 - May 2017 | Software Project Manager',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labo. '
+        body: ''
     },
     {
         title: 'Groupon South Africa',
         subtitle: 'November 2016 - December 2017 | Head Of Strategy & Planning',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labo. '
+        body: ''
     },
     {
         title: 'Yumbi',
         subtitle: 'October 2015 - November 2017 | Marketing Manager',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labo. '
+        body: ''
     },
     {
         title: 'Groupon Australia',
         subtitle: 'January 2013 - October 2015 | Planning Analyst',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labo. '
+        body: ''
     }
 ]
 
@@ -399,7 +430,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100);", ""]);
 
 // module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#FF6978;\n}\na:hover {\n    text-decoration: underline\n} \n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
+exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; /* 100% Full-height */\n    width: 0; /* 0 width - change this with JavaScript */\n    position: fixed; /* Stay in place */\n    z-index: 1; /* Stay on top */\n    top: 0; /* Stay at the top */\n    left: 0;\n    background-color: #111; /* Black*/\n    overflow-x: hidden; /* Disable horizontal scroll */\n    padding-top: 60px; /* Place content 60px from the top */\n    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */\n}\n\n.mobilePicker a {\n    padding: 8px 8px 8px 32px;\n    text-decoration: none;\n    font-size: 25px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    color:#FF6978; \n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#FF6978;\n}\na:hover {\n    text-decoration: underline\n} \n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
 
 // exports
 
@@ -969,6 +1000,12 @@ module.exports = function (css) {
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "7124f3c25d1ed2810b2631db921fd63d.png";
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -978,6 +1015,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleClass", function() { return toggleClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "smoothScroll", function() { return smoothScroll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMinHeight", function() { return setMinHeight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setFavicon", function() { return setFavicon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showPicker", function() { return showPicker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hidePicker", function() { return hidePicker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateTitle", function() { return updateTitle; });
 //Used to initally mount the document fragment onto the document body
 const Mount = (template, element) => {
     let frag = document.createRange().createContextualFragment(template)
@@ -1021,6 +1062,32 @@ const smoothScroll = (element) => {
 const setMinHeight = (id, height) => {
     let el = document.getElementById(id)
     el.style.minHeight = height
+}
+
+//Used to dynamically set thee favicon, because reasons
+const setFavicon = (source) => {
+    let link = document.querySelector("link[rel*='icon']")
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon'; 
+    link.href = source;
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+//Used to control the visibility of the mobile picker
+const showPicker = () => {
+    let picker = document.getElementById('mobilePicker')
+    picker.style.width = "250px"
+}
+
+const hidePicker = () => {
+    let picker = document.getElementById('mobilePicker')
+    picker.style.width = "0px"
+}
+
+//Update title on mobile
+const updateTitle = (t) => {
+    let title = document.getElementById('mainTitle')
+    title.textContent = t
 }
 
 
