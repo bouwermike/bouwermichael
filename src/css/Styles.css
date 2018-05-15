@@ -1,10 +1,10 @@
 /* Font set up*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100|Cutive+Mono');
 
 body, html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     color: black;
-    background-color: #ffff;
+    background-color:#ffff;
 }
 
 /* Structure */
@@ -42,16 +42,16 @@ body, html {
 }
 
 .mobilePicker {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
     left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.1s; 
 }
 
 #navIcon {
@@ -101,7 +101,7 @@ body, html {
     padding: 10px;
     font-size: 30px;
     margin: 0 5px 0 0; 
-    color:#FF6978; 
+    /* color:#FF6978;  */
 }
 
 .topBar {
@@ -145,21 +145,25 @@ hr {
 
 a {
     text-decoration: none;
-    color:#FF6978;
+    /* color:#FF6978; */
 }
 a:hover {
     text-decoration: underline
-} 
+}  
 
-.links a {
-    text-decoration: none;
-    color:#FF6978;
-    padding: 5px;
+/* .links a {
+    text-decoration: underline;
+    color:black;
+    padding: 10px;
 }
 
  .links a:hover {
     text-decoration: underline
-} 
+    color: white;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+}  */
 
 .tabs {
     display: flex;
@@ -187,11 +191,12 @@ a:hover {
 }
 
 .tabs a:hover {
-    color: #FF6978;
+    /* color: #FF6978; */
+    text-decoration: underline;
 } 
 
 .tabs a.is-active {
-    color: #FF6978;
+    /* color: #FF6978; */
     text-decoration: underline;
 }
 

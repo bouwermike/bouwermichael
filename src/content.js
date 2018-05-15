@@ -34,8 +34,8 @@ const Projects = [
     {
         title: 'simple-transaction-processor',
         href: 'https://github.com/bouwermike/simple-transaction-processor',
-        body: `A first attempt at using Node's native event emmitter. 
-            The idea was to mock a small part of Wrapp's transactional processing flow, by firing events at each step, with appropriate handlers listening downstream.
+        body: `A first attempt at using Node's native event emitter. 
+            The idea was to mock a small part of Wrapp's transactional processing flow. <br> This fires events at each step, with appropriate handlers listening downstream.
             Clone the repo and follow along in a terminal :) <br><br>
             
             <b>Stack Used</b>
@@ -195,7 +195,7 @@ const Hero = `
 I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
 I care about two things: finding product-market fit, and then achieving scale.<br><br>
 I've tried to position myself at the interesction of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
-Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately commercial success.`
+Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately, commercial success.`
 
 
 export { Work, Projects, Writing, Skills, Aboutme, Title, Hero }
