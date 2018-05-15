@@ -93,7 +93,7 @@ const work = []
 _Content__WEBPACK_IMPORTED_MODULE_4__["Work"].forEach(e => {
     let x = `
     <h1>${e.title}</h1>
-    <h4>${e.subtitle}</h4>
+    <h5><b>${e.subtitle}</b></h5>
     <p>${e.body}</p>
     `
     work.push(x)
@@ -103,7 +103,7 @@ _Content__WEBPACK_IMPORTED_MODULE_4__["Work"].forEach(e => {
 const projects = []
 _Content__WEBPACK_IMPORTED_MODULE_4__["Projects"].forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
+    <h1><a href="${e.href}">${e.title}</a></h1>
     <p>${e.body}</p>
     `
     projects.push(x)
@@ -113,8 +113,8 @@ _Content__WEBPACK_IMPORTED_MODULE_4__["Projects"].forEach(e => {
 const writing = []
 _Content__WEBPACK_IMPORTED_MODULE_4__["Writing"].forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
-    <p>${e.body}</p>
+    <h1><a href="${e.href}">${e.title}</a></h1>
+    <p>${e.description}</p>
     `
     writing.push(x)
 })
@@ -138,6 +138,15 @@ _Content__WEBPACK_IMPORTED_MODULE_4__["Aboutme"].forEach(e => {
     `
     aboutme.push(x)
 })
+
+window.togglePicker = () => {
+    if(parseInt(document.getElementById('mobilePicker').style.width) > 0){
+        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["hidePicker"])()
+    } else {
+        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["showPicker"])()
+    }
+}
+
 
 document.onreadystatechange = () => {
     switch (document.readyState) {
@@ -192,8 +201,10 @@ document.onreadystatechange = () => {
                         Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["smoothScroll"])(document.getElementById('tabs'))
                         break;
                     case '#navigate':
-                        Object(_Helpers__WEBPACK_IMPORTED_MODULE_3__["showPicker"])()
+                        
                         break;
+                    case '':
+                        //
                     default:
                         //
                         break;
@@ -226,9 +237,9 @@ const App = (props) => {
    <div class="mainContainer">
         <div class="topBar">
             <h2>MICHAEL BOUWER</h2>
-            <span class="mobileMenu"><a href="#navigate" class="icon">
-            <i class="fa fa-bars"></i>
-          </a></span>
+            <span class="mobileMenu" onClick="togglePicker()">
+            <i id="navIcon" class="fa fa-bars"></i>
+</span>
         </div>
         <hr>
         <div class="hero">
@@ -329,24 +340,84 @@ const Work = [
 
 const Projects = [
     {
-        title: 'WarpShift',
-        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+        title: 'simple-transaction-processor',
+        href: 'https://github.com/bouwermike/simple-transaction-processor',
+        body: `A first attempt at using Node's native event emmitter. 
+            The idea was to mock a small part of Wrapp's transactional processing flow, by firing events at each step, with appropriate handlers listening downstream.
+            Clone the repo and follow along in a terminal :) <br><br>
+            
+            <b>Stack Used</b>
+            <ul>
+                <li> Just plain ol' NodeJS </li>
+            </ul>
+            `
     },
     {
-        title: 'ProductX',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
+        title: 'Product-X',
+        href: 'https://github.com/go-product-x',
+        body: `Product-X is a more mature attempt at mocking a 'transactional-processor' based on a simple event driven architecture.
+                I've broken this into a few different services, one to generate dummy transactions, one to handle queueing, and one to handle actual business logic.<br><br>
+                The goal of this project was to learn about RabbitMQ, and use PostgresDB's native pub/sub to pass some events about. I also wanted to focus on proper error handling and code commenting.
+                Feel free to check out the repos and give me some feedback! I'd welcome comments on my code. (Be gentle, I'm learning!)  <br><br>
+                
+                <b>Stack Used</b>
+                <ul>
+                    <li> NodeJS</li>
+                    <li> Express</li>
+                    <li> RabbitMQ (with AMQPlib for Node)</li>
+                    <li> PostgresDB with node-postgres</li>
+                </ul>
+                `
+    },
+    {
+        title: 'bouwermichael.com',
+        href: 'https://github.com/bouwermike/bouwermichael',
+        body: `The website you're busy looking at was built with my bare hands, using nothing but plain old vanillaJS - and I mean really vanillaJS, the whole site is created on the fly using JS and HTML template literal strings.
+                I'm not super proud of how this site has been built - to be honest, its hacky AF. <br><br>
+                But, I wanted to teach myself a few things - specifically how to setup Webpack from scratch, how to use DocumentFragments to store pieces of HTML, and how to handle simple hash routing by listening to "popstate" events.
+                <br><br>
+                Feel free to check out the repo and judge me ruthlessly. (Full disclosure: I know this is not a good way to build websites.)
+                <br><br>
+                <b>Stack Used</b>
+                <ul>
+                    <li> vanillaJS, via transpiled ES7.</li>
+                    <li> Webpack</li>
+                    <li> NPM scripts for build tasks etc.</li>
+                </ul>
+                `
+    },
+    {
+        title: 'warpShift',
+        href: 'https://github.com/bouwermike/warp-shift',
+        body: `This is a little physics game built using SVG and plain old JS. I wanted to learn about mutation observers, and also get my head around some really simple physics.
+                I want to come back to this and clean up the code (said every developer ever). The code is kind of all over the place, but the <a href="https://bouwermike.github.io/warp-shift/">game</a> is pretty fun. You can fly around and bounce off of
+                a randomly generated landscape of little blocks. You can also teleport!
+                <br><br>
+                <b>Stack Used</b>
+                <ul>
+                    <li> vanillaJS, literally. The repo doesn't even have a package.json.</li>
+                </ul>
+                `
     }
 ]
 
 const Writing = [
     {
-        title: 'Medium1',
-        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+        title: 'There is no low hanging fruit until you’ve found product-market fit',
+        href: 'https://medium.com/@michaelbouwer/there-is-no-low-hanging-fruit-until-youve-found-product-market-fit-62483345de9e',
+        description: 'An article in which I argue for a distinction between <i>Inception</i> and <i>Optimisation</i>. ' 
     },
     {
-        title: 'Medium2',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
-    }
+        title: 'Where do you actually add value?',
+        href: 'https://medium.com/@michaelbouwer/where-do-you-actually-add-value-b2983677e766',
+        description: 'An article in which I explore what it is that I am <i>actually</i> good at.' 
+    },
+    {
+        title: 'Groupon South Africa: Lessons From the End of An Era',
+        href: 'https://medium.com/@michaelbouwer/groupon-south-africa-lessons-from-the-end-of-an-era-5de4f35f7b79',
+        description: 'An article in which I recount the experience of watching a multi-national corporation close up shop around me.' 
+    },
+
 ]
 
 const Skills = [
@@ -430,7 +501,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100);", ""]);
 
 // module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; /* 100% Full-height */\n    width: 0; /* 0 width - change this with JavaScript */\n    position: fixed; /* Stay in place */\n    z-index: 1; /* Stay on top */\n    top: 0; /* Stay at the top */\n    left: 0;\n    background-color: #111; /* Black*/\n    overflow-x: hidden; /* Disable horizontal scroll */\n    padding-top: 60px; /* Place content 60px from the top */\n    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */\n}\n\n.mobilePicker a {\n    padding: 8px 8px 8px 32px;\n    text-decoration: none;\n    font-size: 25px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    color:#FF6978; \n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#FF6978;\n}\na:hover {\n    text-decoration: underline\n} \n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
+exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Open Sans', sans-serif;\n    color: black;\n    background-color: #ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; /* 100% Full-height */\n    width: 0; /* 0 width - change this with JavaScript */\n    position: fixed; /* Stay in place */\n    z-index: 1; /* Stay on top */\n    top: 0; /* Stay at the top */\n    left: 0;\n    background-color: #111; /* Black*/\n    overflow-x: hidden; /* Disable horizontal scroll */\n    padding-top: 60px; /* Place content 60px from the top */\n    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */\n}\n\n#navIcon {\n    color: #FF6978\n}\n\n.mobilePicker ul li {\n    list-style: none;\n}\n\n.mobilePicker a {\n    padding: 4px 4px 4px 16px;\n    text-decoration: none;\n    font-size: 20px;\n    color: #818181;\n    display: inline;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    color:#FF6978; \n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#FF6978;\n}\na:hover {\n    text-decoration: underline\n} \n\n.links a {\n    text-decoration: none;\n    color:#FF6978;\n    padding: 5px;\n}\n\n .links a:hover {\n    text-decoration: underline\n} \n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color: #FF6978;\n} \n\n.tabs a.is-active {\n    color: #FF6978;\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n\n#work_:hover {\n    display: none\n}\n#work_:hover::after{\n    content: \"Places I've Worked\";\n}", ""]);
 
 // exports
 
@@ -1076,12 +1147,18 @@ const setFavicon = (source) => {
 //Used to control the visibility of the mobile picker
 const showPicker = () => {
     let picker = document.getElementById('mobilePicker')
+    let navButton = document.getElementById('navIcon')
     picker.style.width = "250px"
+    navButton.classList.toggle('fa-bars')
+    navButton.classList.toggle('fa-times')
 }
 
 const hidePicker = () => {
     let picker = document.getElementById('mobilePicker')
     picker.style.width = "0px"
+    let navButton = document.getElementById('navIcon')
+    navButton.classList.toggle('fa-bars')
+    navButton.classList.toggle('fa-times')
 }
 
 //Update title on mobile

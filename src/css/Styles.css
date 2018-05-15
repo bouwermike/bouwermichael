@@ -199,7 +199,3 @@ a:hover {
     margin-left: 30px;
     margin-right: 30px;
 }
-
-#work_:hover a p.new-label:after{
-    content: 'ADD';
-}
