@@ -9,7 +9,7 @@ const work = []
 Work.forEach(e => {
     let x = `
     <h1>${e.title}</h1>
-    <h4>${e.subtitle}</h4>
+    <h5><b>${e.subtitle}</b></h5>
     <p>${e.body}</p>
     `
     work.push(x)
@@ -19,7 +19,7 @@ Work.forEach(e => {
 const projects = []
 Projects.forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
+    <h1><a href="${e.href}">${e.title}</a></h1>
     <p>${e.body}</p>
     `
     projects.push(x)
@@ -29,8 +29,8 @@ Projects.forEach(e => {
 const writing = []
 Writing.forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
-    <p>${e.body}</p>
+    <h1><a href="${e.href}">${e.title}</a></h1>
+    <p>${e.description}</p>
     `
     writing.push(x)
 })
@@ -54,6 +54,15 @@ Aboutme.forEach(e => {
     `
     aboutme.push(x)
 })
+
+window.togglePicker = () => {
+    if(parseInt(document.getElementById('mobilePicker').style.width) > 0){
+        hidePicker()
+    } else {
+        showPicker()
+    }
+}
+
 
 document.onreadystatechange = () => {
     switch (document.readyState) {
@@ -108,8 +117,10 @@ document.onreadystatechange = () => {
                         smoothScroll(document.getElementById('tabs'))
                         break;
                     case '#navigate':
-                        showPicker()
+                        
                         break;
+                    case '':
+                        //
                     default:
                         //
                         break;

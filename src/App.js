@@ -6,9 +6,9 @@ const App = (props) => {
    <div class="mainContainer">
         <div class="topBar">
             <h2>MICHAEL BOUWER</h2>
-            <span class="mobileMenu"><a href="#navigate" class="icon">
-            <i class="fa fa-bars"></i>
-          </a></span>
+            <span class="mobileMenu" onClick="togglePicker()">
+            <i id="navIcon" class="fa fa-bars"></i>
+</span>
         </div>
         <hr>
         <div class="hero">

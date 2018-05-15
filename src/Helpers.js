@@ -55,12 +55,18 @@ const setFavicon = (source) => {
 //Used to control the visibility of the mobile picker
 const showPicker = () => {
     let picker = document.getElementById('mobilePicker')
+    let navButton = document.getElementById('navIcon')
     picker.style.width = "250px"
+    navButton.classList.toggle('fa-bars')
+    navButton.classList.toggle('fa-times')
 }
 
 const hidePicker = () => {
     let picker = document.getElementById('mobilePicker')
     picker.style.width = "0px"
+    let navButton = document.getElementById('navIcon')
+    navButton.classList.toggle('fa-bars')
+    navButton.classList.toggle('fa-times')
 }
 
 //Update title on mobile
