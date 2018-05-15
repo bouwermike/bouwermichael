@@ -8,7 +8,7 @@ import { Work, Projects, Writing, Skills, Aboutme } from './Content'
 const work = []
 Work.forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
+    <h2>${e.title}</h2>
     <h5><b>${e.subtitle}</b></h5>
     <p>${e.body}</p>
     `
@@ -19,7 +19,7 @@ Work.forEach(e => {
 const projects = []
 Projects.forEach(e => {
     let x = `
-    <h1><a href="${e.href}">${e.title}</a></h1>
+    <h2><a href="${e.href}">${e.title}</a></h2>
     <p>${e.body}</p>
     `
     projects.push(x)
@@ -29,7 +29,7 @@ Projects.forEach(e => {
 const writing = []
 Writing.forEach(e => {
     let x = `
-    <h1><a href="${e.href}">${e.title}</a></h1>
+    <h2><a href="${e.href}">${e.title}</a></h2>
     <p>${e.description}</p>
     `
     writing.push(x)
@@ -39,7 +39,7 @@ Writing.forEach(e => {
 const skills = []
 Skills.forEach(e => {
     let x = `
-    <h1>${e.title}</h1>
+    <h2>${e.title}</h2>
     <p>${e.body}</p>
     `
     skills.push(x)

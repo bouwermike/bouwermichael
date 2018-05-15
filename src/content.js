@@ -2,27 +2,31 @@ const Work = [
     {
         title: 'Wrapp',
         subtitle: 'May 2017 - Present | Head Of Merchant Product',
-        body: ''
+        body: `Currently managing a team of developers to expose Wrapp's campaign logic and transactional insights to our merchant customers through an innovative self-service tool. 
+                `
     },
     {
         title: 'Mobenzi',
         subtitle: 'January 2017 - May 2017 | Software Project Manager',
-        body: ''
+        body: `
+        During a transition period before moving to Europe, I worked with a team of talented developers at Mobenzi, managing project specific implementations of the Mobenzi platform. Check out some of the cool things Mobenzi are doing in the world of mobile research <a href="http://mobenzi.com/">here</a>.`
     },
     {
         title: 'Groupon South Africa',
         subtitle: 'November 2016 - December 2017 | Head Of Strategy & Planning',
-        body: ''
+        body: `Headed up a team of 8 planners working to optimise Groupon's inventory across the Local, Travel & Product verticals.`
     },
     {
         title: 'Yumbi',
         subtitle: 'October 2015 - November 2017 | Marketing Manager',
-        body: ''
+        body: `Worked to shape Yumbi's brand into two coherent stories - a whitelabeled enterprise B2B service, and a high engagement B2C app.`
     },
     {
         title: 'Groupon Australia',
         subtitle: 'January 2013 - October 2015 | Planning Analyst',
-        body: ''
+        body: `Reporting to the Strategy Manager for the New South Wales and Queensland regions, I worked to ensure that Groupon’s Queensland pages were kept crisp, creative and commercially viable.
+
+        This role was all about strategic product planning - using various data sources to understand regional demand, and plan supply accordingly.`
     }
 ]
 
@@ -110,12 +114,53 @@ const Writing = [
 
 const Skills = [
     {
-        title: 'Medium1',
-        body: 'Do pariatur deserunt nulla consequat minim do sint in deserunt exercitation. Laboris amet mollit laborum reprehenderit laborum. Ad sint nostrud excepteur sit aliqua exercitation consectetur irure anim ullamco proident sunt.'
+        title: 'Education',
+        body: `<i>Bachelor of Commerce</i> Economics, University of South Africa`
     },
     {
-        title: 'Medium2',
-        body: 'Esse cillum occaecat non dolore exercitation elit ullamco ipsum exercitation eu duis nulla do. Amet labore fugiat cupidatat ut amet fugiat sit non adipisicing ut. Mollit aliquip sit esse fugiat amet. Exercitation amet nulla voluptate consequat cupidatat nostrud sint tempor exercitation. Magna aliqua tempor proident amet aliqua amet sunt consectetur.'
+        title: 'Tools',
+        body: `
+        <ul>
+            <li>Jira</li>
+            <li>Saleforce</li>
+            <li>PowerBI</li>
+            <li>Mode Analytics</li>
+            <li>Periscope Data</li>
+            <li>Metabase</li>
+            <li>Superset (though I gave up cos it's buggy)</li>
+            <li>Github</li>
+            <li>Heroku</li>
+            <li>AWS (SNS,SQS, Lambda with <i>Serverless</i>. Never actually used EC2.)</li>
+        </ul>
+        `
+    },
+    {
+        title: 'Code',
+        body: `
+        <ul>
+            <li>NodeJS</li>
+            <li>Express</li>
+            <li>vanillaJS</li>
+            <li>Webpack</li>
+            <li>Some React</li>
+            <li>Some Vue</li>
+            <li>Some Python</li>
+            <li>Some Numpy</li>
+            <li>Some Pandas</li>  
+        </ul>
+        `
+    },
+    {
+        title: 'Databases',
+        body: `
+        <ul>
+            <li>MySQL</li>
+            <li>Postgres (the best!)</li>
+            <li>Redshift</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+        </ul>
+        `
     }
 ]
 

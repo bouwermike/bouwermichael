@@ -19,7 +19,7 @@ const App = (props) => {
                 <div class="callout">
                     <h2>${Title}</h2>
                     <p>${Hero}</p>
-                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a> | <a href="#aboutme">Get In Touch</a> </p></span>
+                    <span class="links"><p class="links"><a href="https://medium.com/@michaelbouwer" target="_blank">Medium</a> | <a href="https://www.linkedin.com/in/michael-bouwer-922b0163/" target="_blank">LinkedIn</a> | <a href="#aboutme">Get In Touch</a> </p></span>
                     <ul id="mobileLinks" class="mobileLinks">
                         <li><a href="https://medium.com/@michaelbouwer">Medium</a></li>
                         <li><a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a></li>
