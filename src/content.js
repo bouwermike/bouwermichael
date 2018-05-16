@@ -130,7 +130,7 @@ const Skills = [
             <li>Superset (though I gave up cos it's buggy)</li>
             <li>Github</li>
             <li>Heroku</li>
-            <li>AWS (SNS,SQS, Lambda with <i>Serverless</i>. Never actually used EC2.)</li>
+            <li>AWS (SNS,SQS, Lambda with <i>Serverless</i>.)</li>
         </ul>
         `
     },
@@ -142,6 +142,7 @@ const Skills = [
             <li>Express</li>
             <li>vanillaJS</li>
             <li>Webpack</li>
+            <li>SQL</li>
             <li>Some React</li>
             <li>Some Vue</li>
             <li>Some Python</li>
