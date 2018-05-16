@@ -506,7 +506,7 @@ const Title = `Product. Strategy. Storytelling.`
 const Hero = `
 I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
 I care about two things: finding product-market fit, and then achieving scale.<br><br>
-I've tried to position myself at the interesction of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
+I've tried to position myself at the intersection of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
 Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately, commercial success.`
 
 
