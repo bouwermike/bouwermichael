@@ -1,8 +1,14 @@
 const Work = [
     {
+        title: 'Prodigy Finance',
+        subtitle: 'February 2019 - Present | Senior Product Manager',
+        body: `Currently looking after Prodigy's Payments offering with a view to solve a variety of global payments challenges faced by our borrowers. 
+                `
+    },
+    {
         title: 'Wrapp',
-        subtitle: 'May 2017 - Present | Head Of Merchant Product',
-        body: `Currently managing a team of developers to expose Wrapp's campaign logic and transactional insights to our merchant customers through an innovative self-service tool. 
+        subtitle: 'May 2017 - January 2019 | Head Of Merchant Product',
+        body: `Managed a team of developers to expose Wrapp's campaign logic and transactional insights to their merchant customers through an innovative self-service tool. 
                 `
     },
     {
@@ -177,13 +183,14 @@ const Aboutme = [
         <li>Back to Durban</li>
         <li>Cape Town, South Africa</li>
         <li>Stockholm, Sweden</li>
+        <li>Back to Cape Town</li>
         <li>Next?</li>
     </ul>
     <br>On my off days, you'll find me surfing, writing, building hacky apps in NodeJS, and hanging out with my daughter.
-    <br><br>I'm currently based in Stockholm, Sweden, heading up the merchant facing product of  <a href="https://www.wrapp.com/">Wrapp</a>.</p>
+    <br><br>I'm currently based in Cape Town, South Africa, heading up the borrower repayments product at  <a href="https://www.prodigyfinance.com/">Prodigy Finance</a>.</p>
 <br>
 <h4>Get in touch</h4>
-<p>(+46) 0728419904 </p>
+<p>(+27) 0747962759 </p>
 <p><a href="mailto:bouwermichael@gmail.com">bouwermichael@gmail.com</a></p>
 <p><a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a></p>
 `
