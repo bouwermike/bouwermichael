@@ -312,9 +312,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hero", function() { return Hero; });
 const Work = [
     {
+        title: 'Prodigy Finance',
+        subtitle: 'February 2019 - Present | Senior Product Manager',
+        body: `Currently looking after Prodigy's Payments offering with a view to solve a variety of global payments challenges faced by our borrowers. 
+                `
+    },
+    {
         title: 'Wrapp',
-        subtitle: 'May 2017 - Present | Head Of Merchant Product',
-        body: `Currently managing a team of developers to expose Wrapp's campaign logic and transactional insights to our merchant customers through an innovative self-service tool. 
+        subtitle: 'May 2017 - January 2019 | Head Of Merchant Product',
+        body: `Managed a team of developers to expose Wrapp's campaign logic and transactional insights to their merchant customers through an innovative self-service tool. 
                 `
     },
     {
@@ -489,13 +495,14 @@ const Aboutme = [
         <li>Back to Durban</li>
         <li>Cape Town, South Africa</li>
         <li>Stockholm, Sweden</li>
+        <li>Back to Cape Town</li>
         <li>Next?</li>
     </ul>
     <br>On my off days, you'll find me surfing, writing, building hacky apps in NodeJS, and hanging out with my daughter.
-    <br><br>I'm currently based in Stockholm, Sweden, heading up the merchant facing product of  <a href="https://www.wrapp.com/">Wrapp</a>.</p>
+    <br><br>I'm currently based in Cape Town, South Africa, heading up the borrower repayments product at  <a href="https://www.prodigyfinance.com/">Prodigy Finance</a>.</p>
 <br>
 <h4>Get in touch</h4>
-<p>(+46) 0728419904 </p>
+<p>(+27) 0747962759 </p>
 <p><a href="mailto:bouwermichael@gmail.com">bouwermichael@gmail.com</a></p>
 <p><a href="https://www.linkedin.com/in/michael-bouwer-922b0163/">LinkedIn</a></p>
 `
@@ -543,96 +550,107 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(false);
-// imports
+// Imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100|Cutive+Mono);", ""]);
-
-// module
+// Module
 exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Roboto Mono', monospace;\n    color: black;\n    background-color:#ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; \n    width: 0; \n    position: fixed; \n    z-index: 1; \n    top: 0;\n    left: 0;\n    background-color: #111; \n    overflow-x: hidden; \n    padding-top: 60px; \n    transition: 0.1s; \n}\n\n#navIcon {\n    color: #FF6978\n}\n\n.mobilePicker ul li {\n    list-style: none;\n}\n\n.mobilePicker a {\n    padding: 4px 4px 4px 16px;\n    text-decoration: none;\n    font-size: 20px;\n    color: #818181;\n    display: inline;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    /* color:#FF6978;  */\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    /* color:#FF6978; */\n}\na:hover {\n    text-decoration: underline\n}  \n\n/* .links a {\n    text-decoration: underline;\n    color:black;\n    padding: 10px;\n}\n\n .links a:hover {\n    text-decoration: underline\n    color: white;\n    background: black;\n    padding: 10px;\n    border-radius: 5px;\n}  */\n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    /* color: #FF6978; */\n    text-decoration: underline;\n} \n\n.tabs a.is-active {\n    /* color: #FF6978; */\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
-
-// exports
 
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 /*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
 
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
 
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
+      if (item[2]) {
+        return "@media ".concat(item[2], "{").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      // eslint-disable-next-line prefer-destructuring
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = modules[_i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
 };
 
 function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
 
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
+  var cssMapping = item[3];
 
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
+  if (!cssMapping) {
+    return content;
+  }
 
-	return [content].join('\n');
-}
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
 
-// Adapted from convert-source-map (MIT)
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
 function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
 }
-
 
 /***/ }),
 /* 7 */
