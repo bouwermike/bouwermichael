@@ -1,8 +1,14 @@
 const Work = [
     {
         title: 'Prodigy Finance',
-        subtitle: 'February 2019 - Present | Senior Product Manager',
-        body: `Currently looking after Prodigy's Payments offering with a view to solve a variety of global payments challenges faced by our borrowers. 
+        subtitle: 'January 2020 - Present | Head of Product',
+        body: ` I currently head up the Product team at Prodigy, managing a team of product managers, designers, developers and marketers to solve Prodigy's internal and customer facing challenges.
+                `
+    },
+    {
+        title: 'Prodigy Finance',
+        subtitle: 'February 2019 - December 2019 | Senior Product Manager - Payments',
+        body: `Looked after Prodigy's Repayments offering with a view to solve a variety of global repayments challenges faced by our borrowers. 
                 `
     },
     {
@@ -101,6 +107,11 @@ const Projects = [
 
 const Writing = [
     {
+        title: 'On wells and fences, professionally and personally',
+        href: 'https://medium.com/@michaelbouwer/on-wells-and-fences-professionally-and-personally-dbcc817a6185',
+        description: 'An article in which I explore the notion of leadership being a well, rather than a fence.' 
+    },
+    {
         title: 'There is no low hanging fruit until you’ve found product-market fit',
         href: 'https://medium.com/@michaelbouwer/there-is-no-low-hanging-fruit-until-youve-found-product-market-fit-62483345de9e',
         description: 'An article in which I argue for a distinction between <i>Inception</i> and <i>Optimisation</i>. ' 
@@ -122,6 +133,18 @@ const Skills = [
     {
         title: 'Education',
         body: `<i>Bachelor of Commerce</i> Economics, University of South Africa`
+    },
+    {
+        title: 'Soft',
+        body: `
+        <ul>
+            <li>Writing</li>
+            <li>Leadership</li>
+            <li>Communication</li>
+            <li>Strategy</li>
+            <li>Humour (which is an under rated soft skill)</li>
+        </ul>
+        `
     },
     {
         title: 'Tools',
@@ -187,7 +210,7 @@ const Aboutme = [
         <li>Next?</li>
     </ul>
     <br>On my off days, you'll find me surfing, writing, building hacky apps in NodeJS, and hanging out with my daughter.
-    <br><br>I'm currently based in Cape Town, South Africa, heading up the borrower repayments product at  <a href="https://www.prodigyfinance.com/">Prodigy Finance</a>.</p>
+    <br><br>I'm currently based in Cape Town, South Africa, heading up the Product team at  <a href="https://www.prodigyfinance.com/">Prodigy Finance</a>.</p>
 <br>
 <h4>Get in touch</h4>
 <p>(+27) 0747962759 </p>
