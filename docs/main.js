@@ -277,7 +277,7 @@ const App = (props) => {
         <div class="tabs" id="tabs">
             <ul>
                 <li><a href="#work" id="work_" class="tab is-active">Work</a></li>
-                <li><a href="#projects" id="projects_" class="tab">Projects</a></li>
+                <li><a href="#projects" id="projects_" class="tab">Hacks</a></li>
                 <li><a href="#writing" id="writing_" class="tab">Writing</a></li>
                 <li><a href="#skills" id="skills_" class="tab">Skills</a></li>
                 <li><a href="#aboutme" id="aboutme_" class="tab">About Me</a></li>
@@ -310,7 +310,7 @@ const App = (props) => {
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "53db9e4762e8d0167902cc87710f9a12.jpg";
+module.exports = __webpack_require__.p + "c2f06fc810b7a1c4b3f9f4c3d510bd15.jpg";
 
 /***/ }),
 /* 3 */
@@ -339,7 +339,7 @@ const Work = [
                 `
     },
     {
-        title: 'Wrapp',
+        title: 'Wrapp (recently aquired by Meniga)',
         subtitle: 'May 2017 - January 2019 | Head Of Merchant Product',
         body: `Managed a team of developers to expose Wrapp's campaign logic and transactional insights to their merchant customers through an innovative self-service tool. 
                 `
@@ -357,7 +357,7 @@ const Work = [
     },
     {
         title: 'Yumbi',
-        subtitle: 'October 2015 - November 2017 | Marketing Manager',
+        subtitle: 'October 2015 - November 2016 | Marketing Manager',
         body: `Worked to shape Yumbi's brand into two coherent stories - a whitelabeled enterprise B2B service, and a high engagement B2C app.`
     },
     {
@@ -370,6 +370,18 @@ const Work = [
 ]
 
 const Projects = [
+    {
+        title: 'Auto-Crypto-Daytrader',
+        href: 'https://fir-test-9ae30.web.app/',
+        body: `A very silly game I made. It was inspired by a crazy conversation I had with a cryptocurrency day trader. <br><br>
+            
+            <b>Stack Used</b>
+            <ul>
+                <li>Vue</li>
+                <li>Firebase</li>
+            </ul>
+            `
+    },
     {
         title: 'simple-transaction-processor',
         href: 'https://github.com/bouwermike/simple-transaction-processor',
@@ -462,14 +474,16 @@ const Skills = [
         body: `<i>Bachelor of Commerce</i> Economics, University of South Africa`
     },
     {
-        title: 'Soft',
+        title: 'Core',
         body: `
         <ul>
             <li>Writing</li>
             <li>Leadership</li>
             <li>Communication</li>
             <li>Strategy</li>
-            <li>Humour (which is an under rated soft skill)</li>
+            <li>Humour (which is an under rated skill)</li>
+            <li>Agile</li>
+            <li>Scrum</li>
         </ul>
         `
     },
@@ -551,7 +565,7 @@ const Title = `Product. Strategy. Storytelling.`
 
 const Hero = `
 I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
-I care about two things: finding product-market fit, and then achieving scale.<br><br>
+I care about two things: finding product-market fit, and achieving scale.<br><br>
 I've tried to position myself at the intersection of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
 Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately, commercial success.`
 
@@ -590,8 +604,9 @@ if(false) {}
 exports = module.exports = __webpack_require__(6)(false);
 // Imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100|Cutive+Mono);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap);", ""]);
 // Module
-exports.push([module.i, "/* Font set up*/\n\nbody, html {\n    font-family: 'Roboto Mono', monospace;\n    color: black;\n    background-color:#ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 680px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 680px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; \n    width: 0; \n    position: fixed; \n    z-index: 1; \n    top: 0;\n    left: 0;\n    background-color: #111; \n    overflow-x: hidden; \n    padding-top: 60px; \n    transition: 0.1s; \n}\n\n#navIcon {\n    color: #FF6978\n}\n\n.mobilePicker ul li {\n    list-style: none;\n}\n\n.mobilePicker a {\n    padding: 4px 4px 4px 16px;\n    text-decoration: none;\n    font-size: 20px;\n    color: #818181;\n    display: inline;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    /* color:#FF6978;  */\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    border-radius: 200px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    /* color:#FF6978; */\n}\na:hover {\n    text-decoration: underline\n}  \n\n/* .links a {\n    text-decoration: underline;\n    color:black;\n    padding: 10px;\n}\n\n .links a:hover {\n    text-decoration: underline\n    color: white;\n    background: black;\n    padding: 10px;\n    border-radius: 5px;\n}  */\n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    /* color: #FF6978; */\n    text-decoration: underline;\n} \n\n.tabs a.is-active {\n    /* color: #FF6978; */\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
+exports.push([module.i, "/* Font set up*/\nbody, html {\n    font-family: 'Lato', sans-serif;\n    font-weight: 300;\n    color: black;\n    background-color:#ffff;\n}\n\n/* Structure */\n.mainContainer {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n@media screen and (max-width: 900px) {\n    .profileImg {\n       display: none;\n    }\n    .links {\n        display: none;\n    }\n    .tabs ul {\n        display: none;\n    }\n}\n\n@media screen and (min-width: 900px){\n    .mobileLinks {\n        display: none;\n    }\n    .mobileMenu {\n        display: none;\n    }\n    .mainTitle h1 {\n        display: none\n    }\n}\n\n.mobileLinks {\n    list-style: none;\n    padding: 5px;\n}\n\n.mobilePicker {\n    height: 100%; \n    width: 0; \n    position: fixed; \n    z-index: 1; \n    top: 0;\n    left: 0;\n    background-color: #111; \n    overflow-x: hidden; \n    padding-top: 60px; \n    transition: 0.1s; \n}\n\n#navIcon {\n    color: #FF6978\n}\n\n.mobilePicker ul li {\n    list-style: none;\n}\n\n.mobilePicker a {\n    padding: 4px 4px 4px 16px;\n    text-decoration: none;\n    font-size: 20px;\n    color: #818181;\n    display: inline;\n}\n\n/* When you mouse over the navigation links, change their color */\n.mobilePicker a:hover {\n    color: #f1f1f1;\n}\n\n.mobileMenu {\n    padding: 10px;\n    margin: 10px;\n    position: fixed;\n    top: 0;\n    right: 0;\n}\n\n@media screen and (max-height: 450px) {\n    .mobilePicker {padding-top: 15px;}\n    .mobilePicker a {font-size: 18px;}\n}\n\n.no-display {\n    display: none;\n}\n\n.mainTitle {\n    display:flex;\n    justify-content: center;\n}\n.mainTitle h1{\n    text-decoration: underline;\n    padding: 10px;\n    font-size: 30px;\n    margin: 0 5px 0 0; \n    /* color:#FF6978;  */\n}\n\n.topBar {\n    display: flex;\n    justify-content: center;\n    font-family: 'Roboto Mono', monospace;\n    line-height: 5px;\n} \n\nhr {\n    border: 0;\n    height: 1px;\n    background: #ccc;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.hero {\n    display: flex;\n    border-radius: 5px;    \n}\n\n.heroImage {\n    display: flex;\n    border-radius: 5px;\n    align-self: center;\n}\n\n.profileImg {\n    max-width: 500px;\n    border-radius: 30px;\n    padding: 5%\n}\n\n.heroCallout {\n    display: flex;  \n}\n\n.callout {\n    text-align: left; \n    padding: 10%;\n}\n\na {\n    text-decoration: none;\n    color:#006494;\n}\na:hover {\n    text-decoration: underline\n}  \n\n/* .links a {\n    text-decoration: underline;\n    color:black;\n    padding: 10px;\n}\n\n .links a:hover {\n    text-decoration: underline\n    color: white;\n    background: black;\n    padding: 10px;\n    border-radius: 5px;\n}  */\n\n.tabs {\n    display: flex;\n    justify-content: center;\n    padding: 10px;\n}\n\n.tabs ul {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.tabs li {\n    font-size: 30px;\n    display: inline;\n    margin: 0 5px 0 0;  \n}\n\n.tabs li a {\n    padding: 10px;\n    text-decoration: none;\n    color:black;\n    \n}\n\n.tabs a:hover {\n    color:#006494;\n    text-decoration: underline;\n} \n\n.tabs a.is-active {\n    color:#006494;\n    text-decoration: underline;\n}\n\n.mainContentSection {\n    margin-left: 30px;\n    margin-right: 30px;\n}\n", ""]);
 
 
 /***/ }),

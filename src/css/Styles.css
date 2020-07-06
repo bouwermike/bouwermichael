@@ -1,8 +1,9 @@
 /* Font set up*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Mono:100|Cutive+Mono');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 body, html {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
     color: black;
     background-color:#ffff;
 }
@@ -12,7 +13,7 @@ body, html {
     max-width: 1200px;
     margin: 0 auto;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 900px) {
     .profileImg {
        display: none;
     }
@@ -24,7 +25,7 @@ body, html {
     }
 }
 
-@media screen and (min-width: 680px){
+@media screen and (min-width: 900px){
     .mobileLinks {
         display: none;
     }
@@ -130,7 +131,8 @@ hr {
 }
 
 .profileImg {
-    border-radius: 200px;
+    max-width: 500px;
+    border-radius: 30px;
     padding: 5%
 }
 
@@ -145,7 +147,7 @@ hr {
 
 a {
     text-decoration: none;
-    /* color:#FF6978; */
+    color:#006494;
 }
 a:hover {
     text-decoration: underline
@@ -191,12 +193,12 @@ a:hover {
 }
 
 .tabs a:hover {
-    /* color: #FF6978; */
+    color:#006494;
     text-decoration: underline;
 } 
 
 .tabs a.is-active {
-    /* color: #FF6978; */
+    color:#006494;
     text-decoration: underline;
 }
 

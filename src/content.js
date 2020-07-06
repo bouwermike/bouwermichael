@@ -12,7 +12,7 @@ const Work = [
                 `
     },
     {
-        title: 'Wrapp',
+        title: 'Wrapp (recently aquired by Meniga)',
         subtitle: 'May 2017 - January 2019 | Head Of Merchant Product',
         body: `Managed a team of developers to expose Wrapp's campaign logic and transactional insights to their merchant customers through an innovative self-service tool. 
                 `
@@ -30,7 +30,7 @@ const Work = [
     },
     {
         title: 'Yumbi',
-        subtitle: 'October 2015 - November 2017 | Marketing Manager',
+        subtitle: 'October 2015 - November 2016 | Marketing Manager',
         body: `Worked to shape Yumbi's brand into two coherent stories - a whitelabeled enterprise B2B service, and a high engagement B2C app.`
     },
     {
@@ -43,6 +43,18 @@ const Work = [
 ]
 
 const Projects = [
+    {
+        title: 'Auto-Crypto-Daytrader',
+        href: 'https://fir-test-9ae30.web.app/',
+        body: `A very silly game I made. It was inspired by a crazy conversation I had with a cryptocurrency day trader. <br><br>
+            
+            <b>Stack Used</b>
+            <ul>
+                <li>Vue</li>
+                <li>Firebase</li>
+            </ul>
+            `
+    },
     {
         title: 'simple-transaction-processor',
         href: 'https://github.com/bouwermike/simple-transaction-processor',
@@ -135,14 +147,16 @@ const Skills = [
         body: `<i>Bachelor of Commerce</i> Economics, University of South Africa`
     },
     {
-        title: 'Soft',
+        title: 'Core',
         body: `
         <ul>
             <li>Writing</li>
             <li>Leadership</li>
             <li>Communication</li>
             <li>Strategy</li>
-            <li>Humour (which is an under rated soft skill)</li>
+            <li>Humour (which is an under rated skill)</li>
+            <li>Agile</li>
+            <li>Scrum</li>
         </ul>
         `
     },
@@ -224,7 +238,7 @@ const Title = `Product. Strategy. Storytelling.`
 
 const Hero = `
 I am a product & business strategist with experience working for large and small tech companies on three continents.<br><br>
-I care about two things: finding product-market fit, and then achieving scale.<br><br>
+I care about two things: finding product-market fit, and achieving scale.<br><br>
 I've tried to position myself at the intersection of tech, business, and design - equal parts tech nerd, sales jock and UX hipster.
 Most of all, I enjoy turning data into executable narrative - breaking down complex problems into simple stories that drive a company towards product-market fit, and ultimately, commercial success.`
 
